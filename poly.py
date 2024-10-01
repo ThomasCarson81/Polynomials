@@ -12,3 +12,8 @@ def newtons_method(x, coeffs, depth):
         return 1
     prevx = newtons_method(x, coeffs, depth - 1)
     return prevx - polynomial(prevx, coeffs) / f_prime(prevx, coeffs)
+
+equation = input("Enter the coefficients in the order a + bx + cx^2 + dx^3 + ...:\n")
+equation = equation.split()
+coeffs = [float(i) for i in equation]
+print(newtons_method(1, coeffs, 50))
